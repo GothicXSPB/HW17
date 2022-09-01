@@ -1,5 +1,7 @@
-﻿namespace Massive;
-public class Array
+﻿using System.Globalization;
+
+namespace Massive;
+public class AMassive
 {
     //1) Найти минимальный элемент массива.
     public static int MinUnit(int[] array)
@@ -88,11 +90,11 @@ public class Array
     public static int[] Reverse(int[] array)
     {
         int temp = 0;
-        for (int i = 0; i < array.Length/2; i++)
+        for (int i = 0; i <= array.Length/2; i++)
         {
             temp = array[i];
-            array[i] = array[array.Length - i] ;
-            array[array.Length - i] = temp;
+            array[i] = array[array.Length - (i+1)] ;
+            array[array.Length - (i+1)] = temp;
         }
         return array;
     }
@@ -119,14 +121,24 @@ public class Array
     public static int[] SwapHalf(int[] array)
     {
         int temp = 0;
-        int d = (array.Length/2)+1;
-        for (int i = 0; i < d; i++)
+        int x = 0;
+        int d = (array.Length/2-1);
+        for (int i = d; i >= 0; i--)
         {
             temp = array[i];
-            array[i] = array[d + i];
-            array[d + i] = temp;
+            array[i] = array[array.Length - (x+1)];
+            array[array.Length - (x+1)] = temp;
+            x++;
         }
         return array;
+    }
+
+    public static void Show(int[] array)
+    {
+        for(int i = 0; i < array.Length; i++)
+        {
+            Console.Write($"{array[i]} ");
+        }
     }
 }
 

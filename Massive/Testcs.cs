@@ -1,13 +1,7 @@
-﻿int[] array = new int[] { -5, 3, 18, 44, -500, -4, 52 };
+﻿using Massive;
 
-int min = array[0];
+    int[] array = new int[] { 1, 2, 3, 4 };
 
-for (int i = 1; i < array.Length; i++)
-{
-    if (min > array[i])
-    {
-        min = array[i];
-    }
-}
+AMassive.SwapHalf(array);
 
-Console.WriteLine(min);
+AMassive.Show(array);
