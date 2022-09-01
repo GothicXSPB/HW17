@@ -1,30 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Massive;
+﻿namespace Massive;
 public class Array
 {
-	//1) Найти минимальный элемент массива.
+    //1) Найти минимальный элемент массива.
     public static int MinUnit(int[] array)
-	{
-		int min = array[0];
+    {
+        int min = array[0];
 
-		for (int i = 1; i < array[].Length; i++)
-		{
-			if (min > array[i])
-			{
-				min = array[i];
-			}
-		}
-		return min;
+        for (int i = 1; i < array.Length; i++)
+        {
+            if (min > array[i])
+            {
+                min = array[i];
+            }
+        }
+        return min;
     }
-	//2) Найти максимальный элемент массива.
+    //2) Найти максимальный элемент массива.
 
-	public static int MaxUnit(int[] array)
-	{
+    public static int MaxUnit(int[] array)
+    {
         int max = array[0];
 
         for (int i = 0; i < array.Length; i++)
@@ -34,13 +28,13 @@ public class Array
                 max = array[i];
             }
         }
-		return max;
+        return max;
     }
 
-	//3) Найти индекс минимального элемента массива.
+    //3) Найти индекс минимального элемента массива.
 
-	public static int MinIndex(int[] array)
-	{
+    public static int MinIndex(int[] array)
+    {
         int min = array[0];
         int indexMin = 0;
 
@@ -55,9 +49,9 @@ public class Array
         return indexMin;
     }
 
-	//4) Найти индекс максимального элемента массива.
-	public static int MaxIndex(int[] array)
-	{
+    //4) Найти индекс максимального элемента массива.
+    public static int MaxIndex(int[] array)
+    {
         int max = array[0];
         int indexMax = -1;
 
@@ -80,7 +74,7 @@ public class Array
 
 
         for (int i = 0; i < array.Length; i++)
-        {           
+        {
             if (i % 2 != 0)
             {
                 sum += array[i];
@@ -90,6 +84,18 @@ public class Array
     }
 
     //6) Сделать реверс массива(массив в обратном направлении).
+
+    public static int[] Reverse(int[] array)
+    {
+        int temp = 0;
+        for (int i = 0; i < array.Length/2; i++)
+        {
+            temp = array[i];
+            array[i] = array[array.Length - i] ;
+            array[array.Length - i] = temp;
+        }
+        return array;
+    }
 
     //7) Посчитать количество нечетных элементов массива.
 
@@ -109,6 +115,19 @@ public class Array
     }
 
     //8) Поменять местами первую и вторую половину массива, например, для массива 1 2 3 4, результат 3 4 1 2.
+
+    public static int[] SwapHalf(int[] array)
+    {
+        int temp = 0;
+        int d = (array.Length/2)+1;
+        for (int i = 0; i < d; i++)
+        {
+            temp = array[i];
+            array[i] = array[d + i];
+            array[d + i] = temp;
+        }
+        return array;
+    }
 }
 
 
